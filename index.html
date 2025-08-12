@@ -1,0 +1,387 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Alexander Paul — Data Analyst Intern</title>
+  <meta name="description" content="Portfolio — Alexander Paul | Data Analyst Intern. Projects, skills, experience, contact." />
+
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+    :root{
+      --bg:#0f1724; /* dark navy */
+      --card:#0b1220;
+      --muted:#94a3b8;
+      --accent:#7c3aed;
+      --glass: rgba(255,255,255,0.04);
+      --radius:14px;
+      --max:1100px;
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%;margin:0;font-family:Inter,system-ui,-apple-system,'Segoe UI',Roboto; background:linear-gradient(180deg,#071029 0%, var(--bg) 100%); color:#e6eef8}
+    a{color:inherit}
+
+    /* Layout */
+    .container{max-width:var(--max);margin:0 auto;padding:36px 24px}
+    header{position:fixed;left:0;right:0;top:12px;z-index:50;display:flex;justify-content:center}
+    nav{width:100%;max-width:var(--max);background:linear-gradient(90deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));backdrop-filter:blur(6px);border-radius:12px;padding:10px 16px;display:flex;align-items:center;justify-content:space-between;box-shadow:0 6px 20px rgba(2,6,23,0.6)}
+    .brand{display:flex;gap:12px;align-items:center}
+    .logo{width:44px;height:44px;border-radius:10px;background:linear-gradient(135deg,var(--accent),#3b82f6);display:grid;place-items:center;font-weight:800;color:white}
+    .navlinks{display:flex;gap:14px;align-items:center}
+    .navlinks a{padding:8px 12px;border-radius:8px;font-size:14px;color:var(--muted);text-decoration:none}
+    .navlinks a:hover{background:var(--glass);color:#fff}
+
+    /* Sections */
+    section{min-height:100vh;padding:110px 0 80px}
+    .hero{display:grid;grid-template-columns:1fr 420px;gap:36px;align-items:center}
+    .hero-card{background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));padding:36px;border-radius:18px;box-shadow:0 8px 30px rgba(2,6,23,0.6)}
+    h1{margin:0;font-size:40px;line-height:1.02}
+    .subtitle{color:var(--muted);margin-top:10px}
+    .cta{margin-top:20px;display:flex;gap:12px}
+    .btn{background:var(--accent);color:white;padding:10px 14px;border-radius:10px;text-decoration:none;font-weight:600}
+    .btn.secondary{background:transparent;border:1px solid rgba(255,255,255,0.06);color:var(--muted)}
+
+    /* Profile card */
+    .profile{padding:18px;border-radius:12px;background:linear-gradient(180deg,#07142733,#07142722);display:flex;gap:16px;align-items:center}
+    .avatar{width:86px;height:86px;border-radius:12px;background:linear-gradient(135deg,#1f2937,#111827);display:flex;align-items:center;justify-content:center;font-weight:700;font-size:22px;color:var(--accent)}
+    .meta{color:var(--muted);font-size:14px}
+
+    /* Grid for skills & projects */
+    .grid{display:grid;grid-template-columns:repeat(2,1fr);gap:20px}
+    .card{background:var(--card);padding:18px;border-radius:12px;box-shadow:0 6px 18px rgba(2,6,23,0.5)}
+    .skill-badges{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}
+    .badge{padding:8px 10px;border-radius:999px;background:rgba(255,255,255,0.03);font-size:13px;color:var(--muted)}
+
+    /* Projects */
+    .project{display:flex;gap:16px;align-items:flex-start}
+    .project img{width:120px;height:80px;border-radius:8px;object-fit:cover;background:#072037}
+    .project h4{margin:0}
+    .pill{display:inline-block;padding:6px 8px;border-radius:999px;background:rgba(255,255,255,0.03);font-size:12px;color:var(--muted)}
+
+    /* Experience timeline */
+    .timeline{position:relative;padding-left:16px}
+    .timeline:before{content:"";position:absolute;left:8px;top:0;bottom:0;width:2px;background:linear-gradient(180deg,var(--accent),#06b6d4)}
+    .titem{position:relative;padding:16px 12px;margin-bottom:14px}
+    .dot{position:absolute;left:-2px;top:18px;width:12px;height:12px;border-radius:50%;background:var(--accent);box-shadow:0 0 0 4px rgba(124,58,237,0.12)}
+
+    footer{padding:40px 0;color:var(--muted);text-align:center}
+
+    /* Contact form */
+    form{display:grid;gap:12px}
+    input,textarea{background:transparent;border:1px solid rgba(255,255,255,0.06);padding:10px;border-radius:10px;color:#e6eef8}
+    textarea{min-height:120px}
+
+    /* Responsive */
+    @media(max-width:900px){
+      .hero{grid-template-columns:1fr;}
+      .grid{grid-template-columns:1fr}
+      nav{padding:8px}
+      .navlinks{display:none}
+    }
+
+    /* Small polish */
+    .muted{color:var(--muted)}
+    .small{font-size:13px}
+    .center{display:flex;align-items:center;justify-content:center}
+
+    /* smooth scroll */
+    html{scroll-behavior:smooth}
+  </style>
+</head>
+<body>
+
+  <header>
+    <nav>
+      <div class="brand">
+        <div class="logo">AP</div>
+        <div>
+          <div style="font-weight:700">Alexander Paul</div>
+          <div class="small muted">Data Analyst — Intern</div>
+        </div>
+      </div>
+
+      <div class="navlinks">
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#projects">Projects</a>
+        <a href="#experience">Experience</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </nav>
+  </header>
+
+  <main class="container">
+
+    <!-- HERO / Section 1 -->
+    <section id="home" class="hero">
+      <div class="hero-card">
+        <div style="display:flex;justify-content:space-between;align-items:flex-start">
+          <div>
+            <h1>Alexander Paul</h1>
+            <div class="subtitle">Data Analyst Intern who turns messy data into clear, usable insights. Focused on SQL, Python, visualization, and transforming business questions into measurable outcomes.</div>
+
+            <div class="cta">
+              <a class="btn" href="#projects">See Projects</a>
+              <a class="btn secondary" href="#contact">Hire / Contact</a>
+            </div>
+
+            <div style="margin-top:18px;color:var(--muted);font-size:14px">
+              <strong>Location:</strong> California, USA &nbsp; • &nbsp; <strong>Email:</strong> alexander.paul@email.com
+            </div>
+          </div>
+
+          <div class="profile center" style="flex-direction:column;align-items:flex-end">
+            <div style="display:flex;gap:10px;align-items:center">
+              <div class="avatar">AP</div>
+              <div style="text-align:right">
+                <div style="font-weight:700">Alexander Paul</div>
+                <div class="muted small">Data Analyst Intern</div>
+              </div>
+            </div>
+
+            <div style="width:220px;margin-top:14px;font-size:14px;color:var(--muted)">
+              Practical experience in cleaning datasets (Pandas), building dashboards (Power BI / Tableau), writing production SQL, and producing A/B test analyses.
+            </div>
+
+            <div style="margin-top:12px;display:flex;gap:8px">
+              <a class="pill" href="#projects">3 Projects</a>
+              <a class="pill" href="#skills">Key Skills</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Quick stats card -->
+      <aside style="display:flex;flex-direction:column;gap:16px">
+        <div class="card">
+          <div style="display:flex;justify-content:space-between;align-items:center">
+            <div>
+              <div class="small muted">Years of Practical Work</div>
+              <div style="font-weight:700;font-size:22px">1 yr</div>
+            </div>
+            <div>
+              <div class="small muted">SQL Queries</div>
+              <div style="font-weight:700;font-size:22px">500+</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="small muted">Tools</div>
+          <div style="margin-top:8px;display:flex;flex-wrap:wrap;gap:8px">
+            <span class="badge">Python (pandas)</span>
+            <span class="badge">SQL / Postgres</span>
+            <span class="badge">Tableau</span>
+            <span class="badge">Power BI</span>
+            <span class="badge">Excel</span>
+            <span class="badge">Git</span>
+          </div>
+        </div>
+      </aside>
+    </section>
+
+    <!-- ABOUT / Section 2 -->
+    <section id="about">
+      <div class="card">
+        <h2>About — Straight talk</h2>
+        <p class="muted">I get paid to ask three questions: What happened? Why did it happen? What do we do next? I take raw business data, clean it, and give decision-makers the insights they need to act. I prefer clear metrics over vague dashboards and I push for reproducibility: every analysis should be re-runnable and explainable.</p>
+
+        <div style="margin-top:18px" class="grid">
+          <div>
+            <h3>What I do</h3>
+            <ul class="muted">
+              <li>Data cleaning & wrangling with Python (pandas) and SQL</li>
+              <li>Analysis & hypothesis testing to answer product questions</li>
+              <li>Interactive dashboards and executive reports (Tableau / Power BI)</li>
+              <li>Automation for repeatable reporting using scripts and queries</li>
+            </ul>
+          </div>
+
+          <div>
+            <h3>What I won't do</h3>
+            <p class="muted">I won't build a dashboard that looks pretty but answers nothing. Design without metrics is decoration; I focus on business outcomes and measurable impact.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SKILLS / Section 3 -->
+    <section id="skills">
+      <h2>Skills & Competencies</h2>
+      <div class="grid" style="margin-top:14px">
+        <div class="card">
+          <h3>Technical</h3>
+          <div class="skill-badges">
+            <span class="badge">Python (pandas, numpy)</span>
+            <span class="badge">SQL (Postgres, MySQL)</span>
+            <span class="badge">Data Modeling</span>
+            <span class="badge">Tableau / Power BI</span>
+            <span class="badge">Excel (advanced)</span>
+            <span class="badge">Git & version control</span>
+            <span class="badge">APIs & data ingestion</span>
+          </div>
+
+          <div style="margin-top:12px">
+            <strong class="small muted">Approach:</strong>
+            <p class="muted small">Start with a hypothesis. Validate quickly. Provide actionable recommendations and an implementation plan. Build for scale.</p>
+          </div>
+        </div>
+
+        <div class="card">
+          <h3>Business</h3>
+          <div class="skill-badges">
+            <span class="badge">A/B testing</span>
+            <span class="badge">Cohort analysis</span>
+            <span class="badge">KPI definition</span>
+            <span class="badge">Stakeholder communication</span>
+            <span class="badge">Dashboard storytelling</span>
+          </div>
+
+          <div style="margin-top:12px">
+            <strong class="small muted">Communication:</strong>
+            <p class="muted small">I translate technical results into business terms and prioritise the top 2-3 actions so teams can move fast.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROJECTS / Section 4 -->
+    <section id="projects">
+      <h2>Selected Projects</h2>
+
+      <div style="display:grid;gap:14px;margin-top:12px">
+
+        <div class="project card">
+          <img src="https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?q=80&w=400&auto=format&fit=crop&ixlib=rb-4.0.3&s=placeholder" alt="project-1">
+          <div>
+            <h4>Subscription Churn Analysis</h4>
+            <div class="muted small">SQL, Python, Tableau</div>
+            <p class="muted">Built a repeatable pipeline to identify churn drivers. Performed cohort analysis and built a dashboard that reduced churn by recommending targeted retention campaigns. Key outcome: prioritized three customer segments accounting for 65% of voluntary churn.</p>
+            <div style="margin-top:8px"><span class="pill">Data pipeline</span> <span class="pill">Cohort analysis</span></div>
+          </div>
+        </div>
+
+        <div class="project card">
+          <img src="https://images.unsplash.com/photo-1526378722873-4f94a3b6c7a6?q=80&w=400&auto=format&fit=crop&ixlib=rb-4.0.3&s=placeholder" alt="project-2">
+          <div>
+            <h4>Pricing Experiment A/B</h4>
+            <div class="muted small">Python, Statsmodels, Power BI</div>
+            <p class="muted">Led the analysis for a pricing A/B test. Designed metric definitions, cleaned experiment telemetry, and ran statistical tests. Recommended rollout after confirming a 7% lift in revenue per user (statistically significant).</p>
+            <div style="margin-top:8px"><span class="pill">Experimentation</span> <span class="pill">Metrics</span></div>
+          </div>
+        </div>
+
+        <div class="project card">
+          <img src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?q=80&w=400&auto=format&fit=crop&ixlib=rb-4.0.3&s=placeholder" alt="project-3">
+          <div>
+            <h4>Sales Dashboard & Forecasting</h4>
+            <div class="muted small">SQL, Excel, Tableau</div>
+            <p class="muted">Built an executive dashboard that combined historical sales, product performance, and a simple forecasting model. The dashboard became the single source of truth for weekly reviews.</p>
+            <div style="margin-top:8px"><span class="pill">Forecasting</span> <span class="pill">Executive reporting</span></div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- EXPERIENCE / Section 5 -->
+    <section id="experience">
+      <h2>Experience & Education</h2>
+
+      <div class="grid" style="margin-top:12px">
+        <div class="card">
+          <h3>Professional Experience</h3>
+          <div class="timeline" style="margin-top:12px">
+            <div class="titem">
+              <div class="dot"></div>
+              <div style="font-weight:700">Data Analyst Intern — ACME Corp</div>
+              <div class="small muted">Jun 2024 — Present</div>
+              <div class="muted">Owned weekly retention dashboard, wrote ETL scripts to automate recurring reports, and partnered with product to measure feature launches. Reduced manual reporting time by 60% through automation.</div>
+            </div>
+
+            <div class="titem">
+              <div class="dot" style="background:#06b6d4"></div>
+              <div style="font-weight:700">Freelance Analytics Consultant</div>
+              <div class="small muted">Jan 2023 — May 2024</div>
+              <div class="muted">Analyzed user behaviour for two startups and delivered prioritized recommendations. Built dashboards and taught teams how to maintain them.</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="card">
+          <h3>Education</h3>
+          <div style="margin-top:12px">
+            <div style="font-weight:700">BSc in Computer Science — CAS, California</div>
+            <div class="small muted">2019 — 2025 (expected)</div>
+            <p class="muted">Relevant coursework: Databases, Statistics, Data Mining, Machine Learning (intro), and Software Engineering.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT / Section 6 -->
+    <section id="contact">
+      <h2>Contact</h2>
+      <div class="grid" style="margin-top:12px">
+        <div class="card">
+          <h3>Get in touch</h3>
+          <p class="muted">Want the raw SQL? Need a quick sanity check on an experiment? Prefer someone who will call out weak metrics? Send a short note — I respond fast and prefer direct questions.</p>
+
+          <form onsubmit="event.preventDefault(); alert('Thanks — I\'ll get back to you. (This is a demo contact form)')">
+            <input placeholder="Your name" required>
+            <input placeholder="Email" type="email" required>
+            <input placeholder="Subject" required>
+            <textarea placeholder="Message" required></textarea>
+            <div style="display:flex;gap:10px">
+              <button class="btn" type="submit">Send message</button>
+              <a class="btn secondary" href="mailto:alexander.paul@email.com">Email directly</a>
+            </div>
+          </form>
+        </div>
+
+        <div class="card">
+          <h3>Quick links</h3>
+          <p class="muted">Download resume, view GitHub, or check the data project repo.</p>
+          <div style="display:flex;flex-direction:column;gap:8px;margin-top:8px">
+            <a class="pill" href="#">Download Resume (PDF)</a>
+            <a class="pill" href="#">GitHub: /alexanderpaul</a>
+            <a class="pill" href="#">LinkedIn: Alexander Paul</a>
+          </div>
+
+          <div style="margin-top:18px">
+            <h4 style="margin:0">Availability</h4>
+            <div class="muted small">Open to internships and 3–6 month contracts. Preferred: remote or hybrid.</div>
+          </div>
+        </div>
+      </div>
+
+    </section>
+
+    <footer>
+      <div class="small muted">Made by Alexander Paul — Data Analyst Intern · Git | Email</div>
+    </footer>
+
+  </main>
+
+  <script>
+    // small enhancement: highlight nav link on scroll
+    const sections = Array.from(document.querySelectorAll('section'));
+    const links = Array.from(document.querySelectorAll('.navlinks a'));
+
+    function onScroll(){
+      const y = window.scrollY + window.innerHeight/3;
+      let active = sections[0].id;
+      for(const s of sections){
+        const top = s.offsetTop;
+        if(y >= top) active = s.id;
+      }
+      links.forEach(l => l.classList.toggle('active', l.getAttribute('href') === '#'+active));
+    }
+    window.addEventListener('scroll', onScroll);
+    onScroll();
+  </script>
+
+</body>
+</html>
